@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb2d;
     private Animator myAnimator;
     private SpriteRenderer mySprite;
-    
+    private bool facingRight = false;
     private bool grounded;
 	private bool jumping = false;
     private float hMovement;
@@ -57,6 +57,7 @@ public class PlayerMovement : MonoBehaviour
     {
         //move the character using the speed variable.
         rb2d.velocity = new Vector2(hMovement * speed, rb2d.velocity.y);
+        Flip(hMovement);
         myAnimator.SetFloat("speed", Mathf.Abs(hMovement));
         grounded = Physics2D.OverlapCircle(groundCheck.position, radOCircle, whatIsGround);
         if (jumping)
@@ -67,12 +68,10 @@ public class PlayerMovement : MonoBehaviour
         //counts up fifty times per second. If the number accounts for the set heart rate the heart will bounce.
         beatFUCounter -= 1;
         if (blockage>=0) { blockage -= 1; }
-    
-        
         if (beatFUCounter <= 0)
         {
             //bumps the heart once per beat.
-            rb2d.velocity = new Vector2(rb2d.velocity.x, rb2d.velocity.y + 0.5f);
+            rb2d.velocity = new Vector2(rb2d.velocity.x, rb2d.velocity.y + 0.7f);
             beatFUCounter = (3000 / heartRate);
         }
 
@@ -81,5 +80,16 @@ public class PlayerMovement : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.DrawSphere(groundCheck.position, radOCircle);
+    }
+
+    private void Flip(float horizontal)
+    {
+        if(facingRight && horizontal < 0 || horizontal > 0 && !facingRight)
+        {
+            facingRight = !facingRight;
+            Vector3 theScale = transform.localScale;
+            theScale.x *= -1;
+            transform.localScale = theScale;
+        }
     }
 }
