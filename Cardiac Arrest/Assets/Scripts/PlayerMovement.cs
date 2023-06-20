@@ -40,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
     {
         //check if input for Left or Right, checking once per frame.
         hMovement = Input.GetAxisRaw("Horizontal");
-		if (Input.GetButtonDown("Jump") && Mathf.Abs(rb2d.velocity.y) <= 0.5f /*&& grounded*/)
+		if (Input.GetButtonDown("Jump") && (Mathf.Abs(rb2d.velocity.y) <= 0.5f) || beatFUCounter < 5) /*&& grounded*/)
 		{
 			jumping = true;
 		}
