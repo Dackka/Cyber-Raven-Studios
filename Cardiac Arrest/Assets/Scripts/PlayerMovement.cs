@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb2d;
     private Animator myAnimator;
     private SpriteRenderer mySprite;
-    private int beatFUCounter;
+    
     private bool grounded;
 	private bool jumping = false;
     private float hMovement;
@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     public int heartRate;
     public int graceTime;
     public int blockage;
+    public int beatFUCounter;
 
     [Header("Private Vars")]
     [SerializeField] private Transform groundCheck;
@@ -42,11 +43,11 @@ public class PlayerMovement : MonoBehaviour
     {
         //check if input for Left or Right, checking once per frame.
         hMovement = Input.GetAxisRaw("Horizontal");
-		if (Input.GetButtonDown("Jump") && (beatFUCounter < graceTime || beatFUCounter>(3000/heartRate)-graceTime)&&(blockage<=0) /*&& grounded*/)
+		if (Input.GetButtonDown("Jump") && ((beatFUCounter < graceTime || beatFUCounter>(3000/heartRate)-graceTime)&&(blockage<=0) || grounded))
 		{
 			jumping = true;
 		}
-        if (Input.GetButtonDown("Jump") && !(beatFUCounter < graceTime || beatFUCounter > (3000 / heartRate) - graceTime) /*&& grounded*/)
+        if (Input.GetButtonDown("Jump") && !(beatFUCounter < graceTime || beatFUCounter > (3000 / heartRate) - graceTime))
         {
             blockage = 1+graceTime*2;
         }
@@ -57,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
         //move the character using the speed variable.
         rb2d.velocity = new Vector2(hMovement * speed, rb2d.velocity.y);
         myAnimator.SetFloat("speed", Mathf.Abs(hMovement));
-        grounded = Physics2D.OverlapCircle(groundCheck.position, 0.001f);
+        grounded = Physics2D.OverlapCircle(groundCheck.position, radOCircle, whatIsGround);
         if (jumping)
         {
             jumping = false;
