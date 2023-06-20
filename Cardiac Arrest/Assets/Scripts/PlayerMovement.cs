@@ -68,14 +68,7 @@ public class PlayerMovement : MonoBehaviour
         beatFUCounter -= 1;
         if (blockage>=0) { blockage -= 1; }
     
-        if(beatFUCounter < graceTime || beatFUCounter > (3000 / heartRate) - graceTime)
-            {
-            mySprite.color = Color.red;
-        }
-        else
-        {
-            mySprite.color = Color.magenta;
-        }
+        
         if (beatFUCounter <= 0)
         {
             //bumps the heart once per beat.
