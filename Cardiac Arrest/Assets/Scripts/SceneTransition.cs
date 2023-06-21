@@ -11,6 +11,7 @@ public class SceneTransition : MonoBehaviour
 	[Header("Private Vars")]
 	[SerializeField] private string target;
     [SerializeField] private Collider2D player;
+	[SerializeField] private bool active = true;
 	
 	private void Start()
 	{
@@ -19,7 +20,7 @@ public class SceneTransition : MonoBehaviour
 	
 	private void OnTriggerStay2D (Collider2D enter)
     {
-		if (enter == player)
+		if (enter == player && active)
         {
 			SceneManager.LoadScene(target);
 		}
