@@ -7,7 +7,7 @@ public class DrawFill : MonoBehaviour
 	[SerializeField] private GameObject container;
     private Transform myTransform;
 	private Vector3 scaleChange = new Vector3(2, 2, 2);
-	private Vector3 posChange = new Vector3(0, 0, 0);
+	private Vector3 posChange = new Vector3(0, 0, 0.1f);
 	
     private void Start()
     {
