@@ -43,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
     {
         //check if input for Left or Right, checking once per frame.
         hMovement = Input.GetAxisRaw("Horizontal");
-		if (Input.GetButtonDown("Jump") && ((beatFUCounter < graceTime || beatFUCounter>(3000/heartRate)-graceTime)&&(blockage<=0) || grounded))
+		if (Input.GetButtonDown("Jump") && ((beatFUCounter < graceTime/2 || beatFUCounter>(3000/heartRate)-graceTime*2)&&(blockage<=0) || grounded))
 		{
 			jumping = true;
 		}
@@ -67,12 +67,14 @@ public class PlayerMovement : MonoBehaviour
         }
         //counts up fifty times per second. If the number accounts for the set heart rate the heart will bounce.
         beatFUCounter -= 1;
+        myAnimator.SetFloat("beatCount", beatFUCounter);
         if (blockage>=0) { blockage -= 1; }
         if (beatFUCounter <= 0)
         {
             //bumps the heart once per beat.
             rb2d.velocity = new Vector2(rb2d.velocity.x, rb2d.velocity.y + 0.7f);
             beatFUCounter = (3000 / heartRate);
+            
         }
 
     }

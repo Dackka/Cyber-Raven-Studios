@@ -427,7 +427,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3
+  orthographic size: 4
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -670,7 +670,7 @@ GameObject:
   - component: {fileID: 727058206}
   - component: {fileID: 727058208}
   - component: {fileID: 727058207}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Blood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6003,7 +6003,7 @@ MonoBehaviour:
   m_Follow: {fileID: 161138713}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 3
+    OrthographicSize: 4
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
