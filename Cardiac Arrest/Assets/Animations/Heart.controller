@@ -12,6 +12,7 @@ AnimatorState:
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -88435945876915859}
+  - {fileID: 5935823925541841309}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -110,7 +111,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: HeartJumpMid
-  m_Speed: 10
+  m_Speed: 0.004
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -254628125743543265}
@@ -438,7 +439,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: HeartIdle
-  m_Speed: 1
+  m_Speed: 2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 4667616276435114864}
@@ -512,7 +513,7 @@ AnimatorStateMachine:
     m_Position: {x: -380, y: -420, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3173376424659886671}
-    m_Position: {x: -170, y: -420, z: 0}
+    m_Position: {x: 90, y: -420, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: -1395462203117544762}
@@ -690,8 +691,8 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: HeartLand
-  m_Speed: 1.8
-  m_CycleOffset: 0
+  m_Speed: 3
+  m_CycleOffset: 1
   m_Transitions:
   - {fileID: -7905711086983039468}
   - {fileID: -6857919909193475618}
@@ -710,6 +711,31 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!1101 &5935823925541841309
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: land
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 5719109504693522357}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_ExitTime: 0.8
+  m_HasExitTime: 0
+  m_HasFixedDuration: 0
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
 --- !u!1101 &7689968593021333737
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
