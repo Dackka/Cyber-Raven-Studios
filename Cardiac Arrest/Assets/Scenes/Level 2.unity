@@ -427,7 +427,11 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
+<<<<<<< HEAD
   orthographic size: 3
+=======
+  orthographic size: 4
+>>>>>>> 8ac7ee7a81a7a1d899f44710254b79ad9a9ff79e
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -670,7 +674,11 @@ GameObject:
   - component: {fileID: 727058206}
   - component: {fileID: 727058208}
   - component: {fileID: 727058207}
+<<<<<<< HEAD
   m_Layer: 0
+=======
+  m_Layer: 7
+>>>>>>> 8ac7ee7a81a7a1d899f44710254b79ad9a9ff79e
   m_Name: Blood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5823,7 +5831,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76b57869a0f9b7240b7b3a00a54a089c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   target: Level 3
+=======
+  target: SecondScene
+>>>>>>> 8ac7ee7a81a7a1d899f44710254b79ad9a9ff79e
   player: {fileID: 0}
 --- !u!50 &1100853796
 Rigidbody2D:
@@ -6003,7 +6015,11 @@ MonoBehaviour:
   m_Follow: {fileID: 161138713}
   m_Lens:
     FieldOfView: 60
+<<<<<<< HEAD
     OrthographicSize: 3
+=======
+    OrthographicSize: 4
+>>>>>>> 8ac7ee7a81a7a1d899f44710254b79ad9a9ff79e
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
